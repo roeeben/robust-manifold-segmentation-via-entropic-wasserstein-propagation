@@ -1,6 +1,8 @@
 # Robust Manifold Segmentation via Entropic Wasserstein Propagation
 
-<img title="" src="figs/figure_main.png" alt="Main Segmentation" width="261" data-align="center">
+<p align="center">
+  <img src="figs/figure_main.png" alt="Main Segmentation" width="250">
+</p>
 
 > **Author:** Roee Ben-Shlomo
 > **Institution:** Tel Aviv University
@@ -38,7 +40,9 @@ The algorithm was implemented in Python utilizing `scipy.sparse` for solvers and
 
 We compared our Geodesic (Wasserstein) approach against a naive Euclidean approach (Nearest Neighbors in 3D space) using 7 sparse anchor vertices.
 
-![Topological Consistency & Violation Score](figs/figure_violation.png)
+<p align="center">
+  <img src="figs/figure_violation.png" alt="Topological Consistency & Violation Score" width="400">
+</p>
 
 * **Naive Euclidean:** Fails at complex topological interfaces (e.g., when the hand rests close to the knee). It incorrectly segments the knee as part of the hand due to short spatial distance, resulting in a high Geodesic Violation Score (Max: 1.43).
 * **Ours (Wasserstein):** Successfully diffuses probability along the actual surface geometry of the manifold (up the arm, across the shoulder, down the torso), keeping the violation score negligible (Max: 0.13).
@@ -47,7 +51,9 @@ We compared our Geodesic (Wasserstein) approach against a naive Euclidean approa
 
 We analyzed the behavioral regimes of the entropic regularization parameter ($\gamma$):
 
-![Gamma Sensitivity Analysis](figs/figure_gamma_analysis.png)
+<p align="center">
+  <img src="figs/figure_gamma_analysis.png" alt="Gamma Sensitivity Analysis" width="800">
+</p>
 
 * **Numerical Instability ($\gamma     o 0$):** Heat kernel values approach zero, causing underflow in Sinkhorn iterations.
 * **The Sweet Spot ($\gamma \in [0.002, 0.1]$):** Segmentation is stable. Lower values yield sharper boundaries, while higher values provide a soft segmentation confidence map.
